@@ -27,10 +27,10 @@ pipeline {
                     builderImage.push()
                     builderImage.push("${env.GIT_BRANCH}")
                     builderImage.inside('-v $WORKSPACE:/output -u root') {
-                    sh """
-                        cd /output
-                        lein uberjar
-                    """
+                        sh """
+                            cd /output
+                            lein uberjar
+                        """
                     }
                 }
             }
